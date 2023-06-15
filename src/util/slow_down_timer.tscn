@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cor01bpuq1gf7"]
+
+[ext_resource type="Script" path="res://src/util/slow_down_timer.gd" id="1_kpnbn"]
+
+[node name="SlowDownTimer" type="Node"]
+script = ExtResource("1_kpnbn")

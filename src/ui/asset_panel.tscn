@@ -1,0 +1,132 @@
+[gd_scene load_steps=6 format=3 uid="uid://bod7qqqu14r1m"]
+
+[ext_resource type="Script" path="res://src/ui/asset_panel.gd" id="1_xn25a"]
+[ext_resource type="PackedScene" uid="uid://dm0fmsgrqoh4n" path="res://src/ui/page_container.tscn" id="2_8rbk4"]
+[ext_resource type="Script" path="res://src/ui/SerachLogic.gd" id="3_c2q4q"]
+[ext_resource type="PackedScene" uid="uid://cor01bpuq1gf7" path="res://src/util/slow_down_timer.tscn" id="4_50thw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_byh80"]
+bg_color = Color(0.113725, 0.168627, 0.231373, 1)
+
+[node name="Asset" type="PanelContainer"]
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_byh80")
+script = ExtResource("1_xn25a")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Add" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Add New"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Search: "
+
+[node name="SearchLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Tags: "
+
+[node name="TagsSearchEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AutoInputOptMenu" type="PopupMenu" parent="MarginContainer/VBoxContainer/HBoxContainer/TagsSearchEdit"]
+
+[node name="FoundNumLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "(1/1)"
+
+[node name="SwapDisplay" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Swap Display"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="TagToBeSelect" type="FlowContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Clear Search"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Search Condition: "
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Condition"
+
+[node name="TagConditions" type="FlowContainer" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PageContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_8rbk4")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SerachLogic" type="Node" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+script = ExtResource("3_c2q4q")
+tag_type = 2
+search_condition = Array[String](["Search"])
+search_condition_nodepath = Array[NodePath]([NodePath("../HBoxContainer/SearchLineEdit")])
+tag_tobe_selected_path = NodePath("../TagToBeSelect")
+tag_selected_condition_path = NodePath("../HBoxContainer3/TagConditions")
+tag_search_line_edit_nodepath = NodePath("../HBoxContainer/TagsSearchEdit")
+search_result_nodepath = Array[NodePath]([NodePath("../HBoxContainer3/Label2")])
+tag_search_opt_menu_path = NodePath("../HBoxContainer/TagsSearchEdit/AutoInputOptMenu")
+clear_search_node_path = NodePath("../HBoxContainer3/Button")
+
+[node name="Timer" parent="MarginContainer/VBoxContainer/SerachLogic" instance=ExtResource("4_50thw")]
+wait_time = 3.0
+
+[node name="HBoxContainer2" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Add" to="." method="_on_add_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/SwapDisplay" to="." method="_on_swap_display_pressed"]

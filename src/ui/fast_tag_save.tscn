@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4n4fgyjgicp8"]
+
+[ext_resource type="Script" path="res://src/ui/fast_tag_save.gd" id="1_6hcpw"]
+[ext_resource type="Script" path="res://src/ui/FastTagLogic.gd" id="2_1pxp6"]
+[ext_resource type="PackedScene" uid="uid://cor01bpuq1gf7" path="res://src/util/slow_down_timer.tscn" id="3_dkhch"]
+
+[node name="FastTagSave" type="MarginContainer"]
+script = ExtResource("1_6hcpw")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SubjectName" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Engine"
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "FastTag: "
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/HBoxContainer8"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer8/VBoxContainer"]
+layout_mode = 2
+text = "Select Or Create: "
+
+[node name="TagToBeSelect" type="FlowContainer" parent="HBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="HBoxContainer/HBoxContainer8/TagToBeSelect"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="TagLineEdit" type="LineEdit" parent="HBoxContainer/HBoxContainer8/TagToBeSelect/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AutoInputOptMenu" type="PopupMenu" parent="HBoxContainer/HBoxContainer8/TagToBeSelect/HBoxContainer9/TagLineEdit"]
+
+[node name="TagAddButton" type="Button" parent="HBoxContainer/HBoxContainer8/TagToBeSelect/HBoxContainer9"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Add"
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TagSelected" type="FlowContainer" parent="HBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="FastTagLogic" type="Node" parent="HBoxContainer"]
+unique_name_in_owner = true
+script = ExtResource("2_1pxp6")
+tag_to_be_select_nodepath = NodePath("../HBoxContainer8/TagToBeSelect")
+tag_line_edit_nodepath = NodePath("../HBoxContainer8/TagToBeSelect/HBoxContainer9/TagLineEdit")
+tag_add_button_nodepath = NodePath("../HBoxContainer8/TagToBeSelect/HBoxContainer9/TagAddButton")
+tag_selected_nodepath = NodePath("../HBoxContainer10/TagSelected")
+tag_search_opt_menu_path = NodePath("../HBoxContainer8/TagToBeSelect/HBoxContainer9/TagLineEdit/AutoInputOptMenu")
+
+[node name="Timer" parent="HBoxContainer/FastTagLogic" instance=ExtResource("3_dkhch")]
+wait_time = 3.0

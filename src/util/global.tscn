@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj6tehdbdmy7v"]
+
+[ext_resource type="Script" path="res://src/util/global.gd" id="1_6phrs"]
+[ext_resource type="Script" path="res://addons/thread_pool/thread_pool.gd" id="2_pht20"]
+[ext_resource type="PackedScene" uid="uid://dkprb8ljwvoib" path="res://src/util/image_choose_window.tscn" id="3_l2f4g"]
+[ext_resource type="PackedScene" uid="uid://jdngturyx2y4" path="res://src/util/config.tscn" id="4_d3ydp"]
+
+[node name="Global" type="Node"]
+script = ExtResource("1_6phrs")
+
+[node name="ThreadPool" type="Node" parent="."]
+script = ExtResource("2_pht20")
+
+[node name="ImageChooseWindow" parent="." instance=ExtResource("3_l2f4g")]
+
+[node name="Config" parent="." instance=ExtResource("4_d3ydp")]

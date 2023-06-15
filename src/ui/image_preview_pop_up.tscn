@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://341aya8syaop"]
+
+[ext_resource type="Script" path="res://src/ui/image_preview_pop_up.gd" id="1_oy7k8"]
+
+[node name="ImagePreviewPopUp" type="Popup"]
+visible = true
+script = ExtResource("1_oy7k8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 0
+
+[connection signal="gui_input" from="TextureRect" to="." method="_on_texture_rect_gui_input"]

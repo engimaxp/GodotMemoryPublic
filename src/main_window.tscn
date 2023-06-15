@@ -1,0 +1,188 @@
+[gd_scene load_steps=23 format=3 uid="uid://ctr8gkoc4pep0"]
+
+[ext_resource type="Script" path="res://src/main_window.gd" id="1_pyjum"]
+[ext_resource type="PackedScene" uid="uid://bunvb7kiarnot" path="res://src/util/button_behavior.tscn" id="2_8gl34"]
+[ext_resource type="PackedScene" uid="uid://c2xd0kjhsgfkx" path="res://src/ui/MainSideButton.tscn" id="3_n3qe1"]
+[ext_resource type="Texture2D" uid="uid://cwp0q44pb5140" path="res://assest/icon/ui/gamepad.svg" id="4_pumgj"]
+[ext_resource type="Texture2D" uid="uid://dij4h8xkxy3i7" path="res://assest/icon/ui/boxes.svg" id="5_xabcf"]
+[ext_resource type="Texture2D" uid="uid://bfoiewp6b7pmv" path="res://assest/icon/ui/paint-brush.svg" id="6_wocwe"]
+[ext_resource type="Texture2D" uid="uid://cdwd33scbyo31" path="res://assest/icon/ui/server.svg" id="7_37i08"]
+[ext_resource type="Texture2D" uid="uid://cspvhunjvkty0" path="res://assest/icon/ui/cog.svg" id="8_ikxh7"]
+[ext_resource type="PackedScene" uid="uid://djxtgh42rx6ec" path="res://src/ui/engine_panel.tscn" id="9_eird4"]
+[ext_resource type="PackedScene" uid="uid://5tmtfq1hgd6q" path="res://src/ui/proj_panel.tscn" id="10_rntoc"]
+[ext_resource type="PackedScene" uid="uid://bod7qqqu14r1m" path="res://src/ui/asset_panel.tscn" id="11_ivlnu"]
+[ext_resource type="PackedScene" uid="uid://c5bu4rsmb8tb5" path="res://src/ui/tool_panel.tscn" id="12_wu2ju"]
+[ext_resource type="PackedScene" uid="uid://denfcm6iuryyo" path="res://src/ui/setting_panel.tscn" id="13_3voru"]
+[ext_resource type="Script" path="res://src/ui/BallonLayer.gd" id="14_80rjh"]
+[ext_resource type="PackedScene" uid="uid://qoltw47lcunx" path="res://src/ui/confirm_box_layer.tscn" id="15_pvi00"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3y2t"]
+bg_color = Color(0.0823529, 0.129412, 0.184314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnybt"]
+resource_local_to_scene = true
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mtc1"]
+resource_local_to_scene = true
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afhp7"]
+resource_local_to_scene = true
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6xvr4"]
+resource_local_to_scene = true
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opxva"]
+resource_local_to_scene = true
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3w1ri"]
+bg_color = Color(0.0099, 0.024915, 0.11, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0820312, 0.128906, 0.183594, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="MainWindow" type="Node"]
+script = ExtResource("1_pyjum")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f3y2t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="SideButtonGroup" parent="VBoxContainer/HBoxContainer2/VBoxContainer/VBoxContainer" instance=ExtResource("2_8gl34")]
+unique_name_in_owner = true
+btn_paths = Array[NodePath]([NodePath("../Engine"), NodePath("../Proj"), NodePath("../Asset"), NodePath("../Tool"), NodePath("../Setting")])
+
+[node name="Engine" parent="VBoxContainer/HBoxContainer2/VBoxContainer/VBoxContainer" instance=ExtResource("3_n3qe1")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vnybt")
+texture = ExtResource("4_pumgj")
+text = "Engine"
+
+[node name="Proj" parent="VBoxContainer/HBoxContainer2/VBoxContainer/VBoxContainer" instance=ExtResource("3_n3qe1")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4mtc1")
+texture = ExtResource("5_xabcf")
+text = "Proj"
+
+[node name="Asset" parent="VBoxContainer/HBoxContainer2/VBoxContainer/VBoxContainer" instance=ExtResource("3_n3qe1")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_afhp7")
+texture = ExtResource("6_wocwe")
+text = "Asset"
+
+[node name="Tool" parent="VBoxContainer/HBoxContainer2/VBoxContainer/VBoxContainer" instance=ExtResource("3_n3qe1")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6xvr4")
+texture = ExtResource("7_37i08")
+text = "Tool"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Setting" parent="VBoxContainer/HBoxContainer2/VBoxContainer/VBoxContainer" instance=ExtResource("3_n3qe1")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_opxva")
+texture = ExtResource("8_ikxh7")
+text = "Setting"
+
+[node name="Engine" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("9_eird4")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Proj" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("10_rntoc")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Asset" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("11_ivlnu")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Tool" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("12_wu2ju")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Setting" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("13_3voru")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BallonLayer" type="CanvasLayer" parent="."]
+layer = 128
+script = ExtResource("14_80rjh")
+
+[node name="MarginContainer" type="MarginContainer" parent="BallonLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BallonLayer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BallonLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="BallonLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3w1ri")
+
+[node name="MarginContainer" type="MarginContainer" parent="BallonLayer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 12
+
+[node name="Label" type="Label" parent="BallonLayer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.47451, 0.501961, 0.545098, 1)
+text = "Messages"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConfirmBoxLayer" parent="." instance=ExtResource("15_pvi00")]

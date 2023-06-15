@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bunvb7kiarnot"]
+
+[ext_resource type="Script" path="res://src/util/button_behavior.gd" id="1_lfvb8"]
+
+[node name="ButtonBehavior" type="Node"]
+script = ExtResource("1_lfvb8")

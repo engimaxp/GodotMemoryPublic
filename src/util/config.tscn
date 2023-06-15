@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://jdngturyx2y4"]
+
+[ext_resource type="Script" path="res://src/util/config.gd" id="1_1e5fb"]
+[ext_resource type="Script" path="res://src/util/Localization.gd" id="2_xr1na"]
+
+[node name="Config" type="Node"]
+script = ExtResource("1_1e5fb")
+
+[node name="Localization" type="Node" parent="."]
+script = ExtResource("2_xr1na")

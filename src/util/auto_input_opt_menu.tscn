@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgoneht7gk0r8"]
+
+[ext_resource type="Script" path="res://src/util/auto_input_opt_menu.gd" id="1_dcux1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjkcj"]
+bg_color = Color(0.0099, 0.024915, 0.11, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.968627, 0.701961, 0.294118, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y7pcj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5daw5"]
+
+[node name="AutoInputOptMenu" type="PopupMenu"]
+visible = true
+script = ExtResource("1_dcux1")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xjkcj")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/ScrollContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y7pcj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5daw5")
+text = "Option1"

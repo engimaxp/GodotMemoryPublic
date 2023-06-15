@@ -1,0 +1,360 @@
+# LANGUAGE translation for GodotMemory for the following files:
+# res://src/ui/popup_proj_edit_menu.tscn
+# res://src/main_window.tscn
+# res://src/ui/asset_row.tscn
+# res://src/ui/engine_row.tscn
+# res://src/ui/image_preview_pop_up.tscn
+# res://src/ui/popup_asset_edit_menu.tscn
+# res://src/ui/popup_engine_edit_menu.tscn
+# res://src/ui/popup_tool_edit_menu.tscn
+#
+# FIRST AUTHOR < EMAIL @ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GodotMemory\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_asset_edit_menu.tscn
+msgid "Open a Directory"
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_asset_edit_menu.tscn
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "Choose Project"
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+msgid "Project Directory: "
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_asset_edit_menu.tscn
+msgid "Choose Directory"
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_engine_edit_menu.tscn
+msgid "Main Version: "
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_engine_edit_menu.tscn
+msgid "Version: "
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_asset_edit_menu.tscn
+#: src/ui/popup_engine_edit_menu.tscn
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "Name: "
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+msgid "Used Engine: "
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_asset_edit_menu.tscn
+#: src/ui/popup_engine_edit_menu.tscn
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "Desc: "
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_asset_edit_menu.tscn
+#: src/ui/popup_engine_edit_menu.tscn
+#: src/ui/popup_tool_edit_menu.tscn
+msgid " Type desc here,Better not input long text without breakline"
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_asset_edit_menu.tscn
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "Images: "
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_asset_edit_menu.tscn
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "drop image on window to add"
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_asset_edit_menu.tscn
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "click to preview select"
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_asset_edit_menu.tscn
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "SCAN"
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_asset_edit_menu.tscn
+#: src/ui/popup_engine_edit_menu.tscn
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "Tag: "
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_asset_edit_menu.tscn
+#: src/ui/popup_engine_edit_menu.tscn
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "Add"
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_asset_edit_menu.tscn
+#: src/ui/popup_engine_edit_menu.tscn
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "ok"
+msgstr ""
+
+#: src/ui/popup_proj_edit_menu.tscn
+#: src/ui/popup_asset_edit_menu.tscn
+#: src/ui/popup_engine_edit_menu.tscn
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "close"
+msgstr ""
+
+#: src/main_window.tscn
+msgid "Messages"
+msgstr ""
+
+#: src/ui/asset_row.tscn
+#: src/ui/engine_row.tscn
+msgid "Do you really want to delete [color=%s]%s[/color]?"
+msgstr ""
+
+#: src/ui/asset_row.tscn
+msgid "Asset Directory Copied To ClipBoard"
+msgstr ""
+
+#: src/ui/asset_row.tscn
+msgid "Asset CopyRight Copied To ClipBoard"
+msgstr ""
+
+#: src/ui/asset_row.tscn
+#: src/ui/engine_row.tscn
+msgid "Version 4.0.1 "
+msgstr ""
+
+#: src/ui/asset_row.tscn
+#: src/ui/engine_row.tscn
+msgid "Locate at : caksjdlkajjkjasdkja"
+msgstr ""
+
+#: src/ui/asset_row.tscn
+msgid "Open Project With Engine"
+msgstr ""
+
+#: src/ui/asset_row.tscn
+msgid "Refresh Status"
+msgstr ""
+
+#: src/ui/asset_row.tscn
+msgid "Star Project"
+msgstr ""
+
+#: src/ui/asset_row.tscn
+msgid "Edit Project"
+msgstr ""
+
+#: src/ui/asset_row.tscn
+msgid "Open Project Directory"
+msgstr ""
+
+#: src/ui/asset_row.tscn
+msgid "Delete Project"
+msgstr ""
+
+#: src/ui/engine_row.tscn
+msgid "Encrypt Key Copied To ClipBoard"
+msgstr ""
+
+#: src/ui/engine_row.tscn
+msgid "Run Engine"
+msgstr ""
+
+#: src/ui/engine_row.tscn
+msgid "Run Engine With Console"
+msgstr ""
+
+#: src/ui/engine_row.tscn
+msgid "Edit Engine"
+msgstr ""
+
+#: src/ui/engine_row.tscn
+msgid "Open Engine Directory"
+msgstr ""
+
+#: src/ui/engine_row.tscn
+msgid "Delete Engine"
+msgstr ""
+
+#: src/ui/popup_asset_edit_menu.tscn
+msgid "Asset Directory: "
+msgstr ""
+
+#: src/ui/popup_asset_edit_menu.tscn
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "Link: "
+msgstr ""
+
+#: src/ui/popup_asset_edit_menu.tscn
+msgid "Copy Right: "
+msgstr ""
+
+#: src/ui/popup_engine_edit_menu.tscn
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "Open a File"
+msgstr ""
+
+#: src/ui/popup_engine_edit_menu.tscn
+msgid "*.exe"
+msgstr ""
+
+#: src/ui/popup_engine_edit_menu.tscn
+msgid "Choose Engine"
+msgstr ""
+
+#: src/ui/popup_engine_edit_menu.tscn
+msgid "Engine Executable: "
+msgstr ""
+
+#: src/ui/popup_engine_edit_menu.tscn
+msgid "Choose File"
+msgstr ""
+
+#: src/ui/popup_engine_edit_menu.tscn
+msgid "HasConsole: "
+msgstr ""
+
+#: src/ui/popup_engine_edit_menu.tscn
+msgid "IsDefault: "
+msgstr ""
+
+#: src/ui/popup_engine_edit_menu.tscn
+msgid "IsEncrypt: "
+msgstr ""
+
+#: src/ui/popup_engine_edit_menu.tscn
+msgid "Encrypt Key: "
+msgstr ""
+
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "Open a File or Directory"
+msgstr ""
+
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "*.png"
+msgstr ""
+
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "*.jpg"
+msgstr ""
+
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "*.svg"
+msgstr ""
+
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "*.bmp"
+msgstr ""
+
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "Tool Exe Or Directory: "
+msgstr ""
+
+#: src/ui/popup_tool_edit_menu.tscn
+msgid "Choose Directory Or Exe"
+msgstr ""
+
+
+msgid "Engine"
+msgstr ""
+
+
+msgid "Proj"
+msgstr ""
+
+
+msgid "Asset"
+msgstr ""
+
+
+msgid "Tool"
+msgstr ""
+
+
+msgid "Setting"
+msgstr ""
+
+
+msgid "Add New"
+msgstr ""
+
+
+msgid "Search: "
+msgstr ""
+
+
+msgid "Tags: "
+msgstr ""
+
+
+msgid "Swap Display"
+msgstr ""
+
+
+msgid "Clear Search"
+msgstr ""
+
+
+msgid "Search Condition: "
+msgstr ""
+
+
+msgid "Condition"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "FastTag: "
+msgstr ""
+
+msgid "Default Panel: "
+msgstr ""
+
+msgid "Language: "
+msgstr ""
+
+msgid "Screen Shoot Directory: "
+msgstr ""
+
+msgid "Select Or Create: "
+msgstr ""
+
+msgid "Scan Projects"
+msgstr ""
+
+msgid "%d projects found, %d duplicated, %d unsupport"
+msgstr ""
+
+msgid "Confirm"
+msgstr ""
+
+msgid "pages (%d/%d)"
+msgstr ""

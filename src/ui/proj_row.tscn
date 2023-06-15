@@ -1,0 +1,283 @@
+[gd_scene load_steps=20 format=3 uid="uid://byq5k8l7pu4x5"]
+
+[ext_resource type="Script" path="res://src/ui/proj_row.gd" id="1_asf4m"]
+[ext_resource type="Shader" uid="uid://ck48osohs7wu0" path="res://assest/shader/icon_color.tres" id="2_sidd2"]
+[ext_resource type="Texture2D" uid="uid://5ffk3v31dsnj" path="res://assest/icon/ui/star.svg" id="3_tfjve"]
+[ext_resource type="Texture2D" uid="uid://bbfavavfnjtbv" path="res://icon.svg" id="4_wg7w4"]
+[ext_resource type="Texture2D" uid="uid://bk3rb53d5kty5" path="res://assest/icon/ui/copy.svg" id="5_dpi6g"]
+[ext_resource type="Script" path="res://src/ui/ButtonHoverLight.gd" id="6_3j68s"]
+[ext_resource type="Texture2D" uid="uid://c8x2asku6olfm" path="res://assest/icon/ui/play-circle.svg" id="7_af50m"]
+[ext_resource type="Texture2D" uid="uid://c32uutsip2qy" path="res://assest/icon/ui/sync-alt.svg" id="8_oy33x"]
+[ext_resource type="Texture2D" uid="uid://bbco4i4yfh80u" path="res://assest/icon/ui/edit.svg" id="9_xosf2"]
+[ext_resource type="Texture2D" uid="uid://c7ku2eye7vga5" path="res://assest/icon/ui/folder-open.svg" id="10_mkrm6"]
+[ext_resource type="Texture2D" uid="uid://bhyrtvwe5ogxr" path="res://assest/icon/ui/times-circle.svg" id="11_piw4m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2abqg"]
+shader = ExtResource("2_sidd2")
+shader_parameter/tint_color = Color(0.972549, 0.705882, 0.294118, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j5ymp"]
+resource_local_to_scene = true
+shader = ExtResource("2_sidd2")
+shader_parameter/tint_color = Color(0.258824, 0.384314, 0.52549, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ianh2"]
+resource_local_to_scene = true
+shader = ExtResource("2_sidd2")
+shader_parameter/tint_color = Color(0.258824, 0.384314, 0.529412, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1p4rm"]
+resource_local_to_scene = true
+shader = ExtResource("2_sidd2")
+shader_parameter/tint_color = Color(0.258824, 0.384314, 0.529412, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fsp6x"]
+resource_local_to_scene = true
+shader = ExtResource("2_sidd2")
+shader_parameter/tint_color = Color(0.258824, 0.384314, 0.529412, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jmwxi"]
+resource_local_to_scene = true
+shader = ExtResource("2_sidd2")
+shader_parameter/tint_color = Color(0.258824, 0.384314, 0.529412, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7d0kh"]
+resource_local_to_scene = true
+shader = ExtResource("2_sidd2")
+shader_parameter/tint_color = Color(0.258824, 0.384314, 0.529412, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3dvuo"]
+resource_local_to_scene = true
+shader = ExtResource("2_sidd2")
+shader_parameter/tint_color = Color(0.258824, 0.384314, 0.529412, 1)
+
+[node name="ProjRow" type="PanelContainer" groups=["ProjectRow"]]
+size_flags_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_asf4m")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="star" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_2abqg")
+custom_minimum_size = Vector2(56, 32)
+layout_mode = 2
+texture = ExtResource("3_tfjve")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(56, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+
+[node name="MainVersion" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0.0784314, 0.321569, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96.005, 96)
+layout_mode = 2
+texture = ExtResource("4_wg7w4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="ProjectTextDescContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/ProjectTextDescContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/ProjectTextDescContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="ProjName" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/ProjectTextDescContainer/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Version 4.0.1 "
+autowrap_mode = 3
+
+[node name="Version" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/ProjectTextDescContainer/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Version 4.0.1 "
+autowrap_mode = 3
+
+[node name="EngineName" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/ProjectTextDescContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Version 4.0.1 "
+horizontal_alignment = 2
+autowrap_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/ProjectTextDescContainer"]
+layout_mode = 2
+
+[node name="CopyDir" type="TextureButton" parent="MarginContainer/HBoxContainer/MarginContainer/ProjectTextDescContainer/HBoxContainer2"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_j5ymp")
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+texture_normal = ExtResource("5_dpi6g")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("6_3j68s")
+
+[node name="Locate" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/ProjectTextDescContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Locate at : caksjdlkajjkjasdkja"
+autowrap_mode = 3
+
+[node name="Desc" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MarginContainer/ProjectTextDescContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Locate at : caksjdlkajjkjasdkja"
+fit_content = true
+scroll_active = false
+
+[node name="Container" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/ProjectTextDescContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="TagContainer" type="FlowContainer" parent="MarginContainer/HBoxContainer/MarginContainer/ProjectTextDescContainer/Container"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProjectImageDescContainer" type="FlowContainer" parent="MarginContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="OpenWIthEngine" type="TextureButton" parent="MarginContainer/HBoxContainer/MarginContainer3/GridContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_ianh2")
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
+tooltip_text = "Open Project With Engine"
+texture_normal = ExtResource("7_af50m")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("6_3j68s")
+
+[node name="RefreshStatus" type="TextureButton" parent="MarginContainer/HBoxContainer/MarginContainer3/GridContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_1p4rm")
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
+tooltip_text = "Refresh Status"
+texture_normal = ExtResource("8_oy33x")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("6_3j68s")
+
+[node name="Edit" type="TextureButton" parent="MarginContainer/HBoxContainer/MarginContainer3/GridContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_fsp6x")
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
+tooltip_text = "Edit Project"
+texture_normal = ExtResource("9_xosf2")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("6_3j68s")
+
+[node name="OpenDir" type="TextureButton" parent="MarginContainer/HBoxContainer/MarginContainer3/GridContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_jmwxi")
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
+tooltip_text = "Open Project Directory"
+texture_normal = ExtResource("10_mkrm6")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("6_3j68s")
+
+[node name="Star" type="TextureButton" parent="MarginContainer/HBoxContainer/MarginContainer3/GridContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_7d0kh")
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
+tooltip_text = "Star Project"
+texture_normal = ExtResource("3_tfjve")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("6_3j68s")
+is_toggle = true
+
+[node name="Delete" type="TextureButton" parent="MarginContainer/HBoxContainer/MarginContainer3/GridContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_3dvuo")
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
+tooltip_text = "Delete Project"
+texture_normal = ExtResource("11_piw4m")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("6_3j68s")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/ProjectTextDescContainer/HBoxContainer2/CopyDir" to="." method="_on_copy_dir_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer3/GridContainer/OpenWIthEngine" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer3/GridContainer/RefreshStatus" to="." method="_on_refresh_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer3/GridContainer/Edit" to="." method="_on_edit_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer3/GridContainer/OpenDir" to="." method="_on_open_dir_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer3/GridContainer/Star" to="." method="_on_star_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer3/GridContainer/Delete" to="." method="_on_delete_pressed"]

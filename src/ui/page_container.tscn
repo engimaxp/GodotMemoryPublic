@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm0fmsgrqoh4n"]
+
+[ext_resource type="Script" path="res://src/ui/page_container.gd" id="1_chc2i"]
+
+[node name="PageContainer" type="HBoxContainer"]
+theme_override_constants/separation = 20
+script = ExtResource("1_chc2i")
+
+[node name="PageSpinBox" type="SpinBox" parent="."]
+layout_mode = 2
+min_value = 1.0
+value = 1.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "pages"
+
+[connection signal="value_changed" from="PageSpinBox" to="." method="_on_page_spin_box_value_changed"]

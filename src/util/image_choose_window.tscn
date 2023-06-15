@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkprb8ljwvoib"]
+
+[ext_resource type="Script" path="res://src/util/image_choose_window.gd" id="1_j82x6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1pf4i"]
+bg_color = Color(0.258824, 0.384314, 0.52549, 1)
+
+[node name="ImageChooseWindow" type="CanvasLayer"]
+layer = 127
+script = ExtResource("1_j82x6")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1pf4i")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="FlowContainer" type="FlowContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="OK" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "OK"
+
+[node name="Cancel" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Cancel"
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/OK" to="." method="_on_ok_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_cancel_pressed"]

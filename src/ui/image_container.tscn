@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://cniodb2fkx4kr"]
+
+[ext_resource type="Script" path="res://src/ui/image_container.gd" id="1_3b4jv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5igll"]
+resource_local_to_scene = true
+bg_color = Color(0.882353, 0.882353, 0.882353, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="ImageContainer" type="MarginContainer" groups=["ImageContainer"]]
+offset_right = 52.0
+offset_bottom = 56.0
+size_flags_horizontal = 0
+mouse_filter = 2
+script = ExtResource("1_3b4jv")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+expand_mode = 5
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5igll")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "14"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+layout_mode = 2
+mouse_filter = 2
+border_width = 2.3
+editor_only = false
+
+[connection signal="gui_input" from="PanelContainer" to="." method="_on_panel_container_gui_input"]
+[connection signal="mouse_entered" from="PanelContainer" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer" to="." method="clear_hover"]
