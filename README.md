@@ -2,6 +2,8 @@
 
 [中文](./README_ZhCN.md)
 
+[Tutorial](https://www.youtube.com/watch?v=445NqnxvLi0)
+
 ## Preface
 
 This is a learning project for leaping from Godot3 to Godot4, and also to solve the inconvenience in the process of switching between versions 3 and 4. Due to my limited level, there may be some poor design or bugs at present, please understand. If you have any questions, leave a message in the comment area, thank you.
